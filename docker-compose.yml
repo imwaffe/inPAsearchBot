@@ -1,0 +1,12 @@
+services:
+  inpa-bot:
+    build: .
+    container_name: inpa-bot
+    environment:
+      TELEGRAM_BOT_TOKEN: "${TELEGRAM_BOT_TOKEN}"
+      POLL_INTERVAL_MINUTES: "30"
+      TZ: "Europe/Rome"
+      DATA_FILE: "/app/data/data.json"
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data

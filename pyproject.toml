@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "inpa-telegram-bot"
+version = "0.1.0"
+description = "Telegram bot to monitor INPA searches (single-search per user)"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-telegram-bot = "^20.7"
+APScheduler = "^3.10.4"
+requests = "^2.32.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+pytest-asyncio = "^0.23.8"
+requests-mock = "^1.12.1"
+
+
+[tool.poetry.scripts]
+inpa-bot = "app.bot.main:main_async"
+
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
